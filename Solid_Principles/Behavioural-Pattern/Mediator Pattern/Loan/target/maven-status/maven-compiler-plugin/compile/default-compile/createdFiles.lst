@@ -1,0 +1,11 @@
+org\example\loaninterface\Notification.class
+org\example\services\IncomeCheckService.class
+org\example\services\CreditScoreService.class
+org\example\services\LoanService.class
+org\example\Main.class
+org\example\loaninterface\LoanMediator.class
+org\example\loaninterface\CreditScoreCheck.class
+org\example\colleague\Colleague.class
+org\example\loaninterface\IncomeCheck.class
+org\example\services\NotificationService.class
+org\example\services\User.class
