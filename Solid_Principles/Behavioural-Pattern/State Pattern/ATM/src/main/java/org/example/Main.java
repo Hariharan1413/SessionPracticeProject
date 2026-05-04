@@ -4,14 +4,23 @@ package org.example;
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
     public static void main(String[] args) {
-        //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
-        // to see how IntelliJ IDEA suggests fixing it.
-        System.out.printf("Hello and welcome!");
 
-        for (int i = 1; i <= 5; i++) {
-            //TIP Press <shortcut actionId="Debug"/> to start debugging your code. We have set one <icon src="AllIcons.Debugger.Db_set_breakpoint"/> breakpoint
-            // for you, but you can always add more by pressing <shortcut actionId="ToggleLineBreakpoint"/>.
-            System.out.println("i = " + i);
-        }
+        // Normal flow: Insert → Pin → Withdraw → Eject
+        System.out.println("=== Normal ATM Flow ===");
+        ATMMachine machine = new ATMMachine();
+        machine.insertCard();
+        machine.enterPin();
+        machine.withdrawCash();
+        machine.ejectCard();
+
+        System.out.println();
+
+        // Flow with early eject: Insert → Pin → Eject → Withdraw (should fail)
+        System.out.println("=== Early Eject Flow ===");
+        ATMMachine machine1 = new ATMMachine();
+        machine1.insertCard();
+        machine1.enterPin();
+        machine1.ejectCard();
+        machine1.withdrawCash(); // Should fail: no card inserted
     }
 }
